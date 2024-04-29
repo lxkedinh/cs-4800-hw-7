@@ -11,6 +11,18 @@ public class CharacterProperties {
         this.size = size;
     }
 
+    public String getFont() {
+        return font;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
     /**
      * @return serialized string that represents this combination of character properties as "font-color-size".
      */

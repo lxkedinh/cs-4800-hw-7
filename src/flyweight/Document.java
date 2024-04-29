@@ -28,8 +28,8 @@ public class Document {
         content.add(new Character(character, propertiesString));
     }
 
-    public void undo() {
-        content.remove(content.size() - 1);
+    public Character undo() {
+        return content.remove(content.size() - 1);
     }
 
     private void readFromFile(String fileName) throws FileNotFoundException, IOException {
