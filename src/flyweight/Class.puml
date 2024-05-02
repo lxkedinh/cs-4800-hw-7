@@ -1,0 +1,45 @@
+@startuml
+class Character {
+- char character
+- CharacterProperties characterproperty
++ Character(char character, CharacterProperties characterproperty)
++ void setCharacter(char character)
++ void setCharacterProperty(CharacterProperties characterproperty)
++ char getCharacter()
++ String getFont()
++ String getColor()
++ int getSize()
+}
+
+class CharacterProperties {
+- String font
+- String color
+- int size
++ CharacterProperties(String font, String color, int size)
++ String getFont()
++ String getColor()
++ int getSize()
+}
+
+Character o-- CharacterProperties
+
+class CharacterPropertiesFactory {
+- Map<String, CharacterProperties> flyweights
++ CharacterPropertiesFactory()
++ CharacterProperties setAndRetrieveFlyweightCharacterProperties(String font, String color, int size)
+}
+
+class Document {
+- List<Character> characters
+- CharacterPropertiesFactory propertiesFactory
++ Document()
++ void addCharacter(char c, String font, String color, int size)
++ void editCharacterProperties(int index, String font, String color, int size)
++ void saveToFile(String filename)
++ void loadFromFile(String filename)
+}
+
+Document *-- CharacterPropertiesFactory
+Document *-- Character
+
+@enduml

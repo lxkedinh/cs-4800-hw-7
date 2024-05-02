@@ -1,0 +1,122 @@
+@startuml
+object "testDocument : Document" as doc
+object "CharacterPropertiesFactory" as factory
+
+doc *-- factory
+
+object "ArialBlack16 : CharacterProperties" as ArialBlack16 {
+font = "Arial"
+color = "Black"
+size = 16
+}
+object "ArialBlack14 : CharacterProperties" as ArialBlack14 {
+font = "Arial"
+color = "Black"
+size = 14
+}
+object "VerdanaBlue18 : CharacterProperties" as VerdanaBlue18 {
+font = "Verdana"
+color = "Blue"
+size = 18
+}
+object "VerdanaRed12 : CharacterProperties" as VerdanaRed12 {
+font = "Verdana"
+color = "Red"
+size = 12
+}
+object "CalibriBlue99 : CharacterProperties" as CalibriBlue99 {
+font = "Calibri"
+color = "Blue"
+size = 99
+}
+
+factory *-- ArialBlack16
+factory *-- ArialBlack14
+factory *-- VerdanaBlue18
+factory *-- VerdanaRed12
+factory *-- CalibriBlue99
+
+object "characters[0] : Character" as H {
+character = 'H'
+}
+object "characters[1] : Character" as e {
+character = 'e'
+}
+object "characters[2] : Character" as l1 {
+character = 'l'
+}
+object "characters[3] : Character" as l2 {
+character = 'l'
+}
+object "characters[4] : Character" as o1 {
+character = 'o'
+}
+object "characters[5] : Character" as W {
+character = 'W'
+}
+object "characters[6] : Character" as o2 {
+character = 'o'
+}
+object "characters[7] : Character" as r {
+character = 'r'
+}
+object "characters[8] : Character" as l3 {
+character = 'l'
+}
+object "characters[9] : Character" as d {
+character = 'd'
+}
+object "characters[10] : Character" as C {
+character = 'C'
+}
+object "characters[11] : Character" as S {
+character = 'S'
+}
+object "characters[12] : Character" as 5 {
+character = '5'
+}
+object "characters[13] : Character" as 8 {
+character = '8'
+}
+object "characters[14] : Character" as 01 {
+character = '0'
+}
+object "characters[15] : Character" as 02 {
+character = '0'
+}
+
+doc *-- H
+doc *-- e
+doc *-- l1
+doc *-- l2
+doc *-- o1
+doc *-- W
+doc *-- o2
+doc *-- r
+doc *-- l3
+doc *-- d
+doc *-- C
+doc *-- S
+doc *-- 5
+doc *-- 8
+doc *-- 01
+doc *-- 02
+
+H o-- CalibriBlue99
+W o-- CalibriBlue99
+e o-- ArialBlack14
+l1 o-- ArialBlack14
+l2 o-- ArialBlack14
+o1 o-- ArialBlack14
+o2 o-- ArialBlack14
+r o-- ArialBlack14
+l3 o-- ArialBlack14
+d o-- ArialBlack14
+C o-- VerdanaBlue18
+S o-- VerdanaBlue18
+5 o-- VerdanaRed12
+8 o-- VerdanaRed12
+01 o-- VerdanaRed12
+02 o-- VerdanaRed12
+
+@enduml
