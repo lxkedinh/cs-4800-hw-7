@@ -1,4 +1,5 @@
 @startuml
+left to right direction
 object "testDocument : Document" as doc
 object "CharacterPropertiesFactory" as factory
 
